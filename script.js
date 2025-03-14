@@ -1,23 +1,59 @@
-const validar = document.querySelector('#btnSubmit');
-const retorno = document.querySelector('#retorno');
-const validarPalindromo = () => {
+//const btnValidarPalindromo = document.querySelector('#btnSubmitPalindromo');
+//const txtRetornoPalindromo = document.querySelector('#txtRetornoPalindromo');
+const btnValidarParentesis = document.querySelector('#btnSubmitParentesis');
+const txtRetornoParentesis = document.querySelector('#txtRetornoParentesis');
+/*const validarPalindromo = () => {
   let palindromo = [];
-  let palabra = document.querySelector('#palindromo').value;
-  console.log(palabra);
+  let frase = document.querySelector('#palindromo').value;
   let comparador = '';
-  palindromo = palabra.split(' ');
-  for (i = palindromo.length - 1; i >= 0; i--) {
+  palindromo = frase.split(' ');
+  for (let i = palindromo.length - 1; i >= 0; i--) {
     comparador += palindromo[i].toLowerCase();
   }
-    console.log(comparador);
-  if (palabra === comparador) {
-    retorno.style.display = "block";
-    retorno.innerHTML = 'La frase: \"' + palabra + '\" si es un palindromo.';
+  if (frase === comparador) {
+    txtRetornoPalindromo.style.display = "block";
+    txtRetornoPalindromo.innerHTML = 'La frase: \"' + frase + '\" si es un palindromo.';
     return 'true';
   } else {
-    retorno.style.display = "block";
-    retorno.innerHTML = 'La frase: \"' + palabra + '\" si es un palindromo.';
+    txtRetornoPalindromo.style.display = "block";
+    txtRetornoPalindromo.innerHTML = 'La frase: \"' + frase + '\" no es un palindromo.';
     return 'false';
   }
-};
-validar.onclick = validarPalindromo;
+};*/
+const validarParentesisBalanceados = () =>{
+  let parentesis = [];
+  let frase = document.querySelector('#parentesisBalanceados').value.split('');
+  console.log(frase)
+  for (let i = 0; i <= frase.length - 1; i++) { 
+    if(parentesis.length === 0){
+      parentesis.push(frase[i]);
+      if(){
+
+      }else if(frase[i] ==="(" &&  parentesis.find((element,i) => element === ")" ) ? i : false){
+
+      }else{
+
+      }
+      txtRetornoParentesis.style.display = "block";
+      //txtRetornoParentesis.innerHTML = 'La f es: \"' + f;
+      //parentesis.push(frase[i]);
+    }/*else if(frase[i] ===")"){
+      parentesis.pop();
+    }*/
+  }/*
+  if(parentesis.length>0){
+    txtRetornoParentesis.style.display = "block";
+    txtRetornoParentesis.innerHTML = 'La frase: \"' + frase + '\" si es un palindromo.';
+    return 'true';
+  } else {
+    txtRetornoParentesis.style.display = "block";
+    txtRetornoParentesis.innerHTML = 'La frase: \"' + frase + '\" si es un palindromo.';
+    return 'true';    
+  }*/
+}
+
+const buscarParentesis = (parentesi) =>{
+  return parentesis.find((element,i) => element === parentesi ) ? i : false;
+}
+//btnValidarPalindromo.onclick = validarPalindromo;
+btnValidarParentesis.onclick = validarParentesisBalanceados;
